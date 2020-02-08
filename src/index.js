@@ -6,5 +6,3 @@ new Vue({
   el: '#root',
   render: h => h(App)
 })
-
-// document.getElementById('content').innerText = JSON.stringify(callHistory)

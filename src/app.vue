@@ -3,8 +3,8 @@
     <Header />
     <div class="contact-box">
       <Contact
-        v-for="contact in contacts"
-        :key="contact.phoneNumber + contact.called"
+        v-for="contact in callHistory"
+        :key="contact.firstName + contact.lastName"
         :first-name="contact.firstName"
         :last-name="contact.lastName"
       />
@@ -15,13 +15,13 @@
 <script>
 import Header from './components/header.vue'
 import Contact from './components/contact.vue'
-import contacts from './callHistory'
+import { transformedCallHistory as callHistory } from './logic/call-history-converter'
 
 export default {
   components: { Header, Contact },
   data () {
     return {
-      contacts
+      callHistory
     }
   }
 }
