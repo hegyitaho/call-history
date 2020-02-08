@@ -11,23 +11,18 @@
 
 <script>
 import TextWithArrow from './text-with-arrow.vue'
+import formatDistanceStrict from 'date-fns/formatDistanceStrict'
+
 export default {
   components: { TextWithArrow },
   props: {
     firstName: { type: String, default: () => '?' },
     lastName: { type: String, default: () => '?' },
-    daysAgo: { type: Number, default: () => null }
+    lastCalled: { type: Number, default: () => null }
   },
   computed: {
     formattedDaysAgo () {
-      return `${this.formattedDays} ago`
-    },
-    formattedDays () {
-      return this.daysAgo === null ? '?' : this.formatDaysPluralOrSingular
-    },
-    formatDaysPluralOrSingular () {
-      const days = this.daysAgo > 1 ? 'days' : 'day'
-      return `${this.daysAgo} ${days}`
+      return formatDistanceStrict(new Date(this.lastCalled * 1000), new Date(), { unit: 'day' }) + ' ago'
     }
   }
 }

@@ -7,6 +7,7 @@
         :key="contact.firstName + contact.lastName"
         :first-name="contact.firstName"
         :last-name="contact.lastName"
+        :last-called="contact.lastCalled"
       />
     </div>
   </div>
@@ -28,7 +29,6 @@ export default {
 </script>
 
 <style>
-/* @import '../node_modules/reset-css/reset.css'; */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
