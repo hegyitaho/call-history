@@ -1,5 +1,5 @@
 import callHistory from '../callHistory'
-import { pick, uniq, pipe, map, max, reduce, prop, dissoc, whereEq, descend, sortWith, ascend } from 'ramda'
+import { pick, uniq, pipe, map, max, reduce, prop, dissoc, whereEq, descend, sortWith } from 'ramda'
 
 export const transformedCallHistory = convert(callHistory)
 

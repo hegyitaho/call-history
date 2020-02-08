@@ -8,6 +8,7 @@
         :first-name="contact.firstName"
         :last-name="contact.lastName"
         :last-called="contact.lastCalled"
+        :current-date="currentDate"
       />
     </div>
   </div>
@@ -22,9 +23,16 @@ export default {
   components: { Header, Contact },
   data () {
     return {
-      callHistory
+      callHistory,
+      currentDate: new Date()
+    }
+  },
+  watch: {
+    callHistory () {
+      this.currentDate = new Date()
     }
   }
+
 }
 </script>
 

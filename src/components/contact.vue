@@ -18,11 +18,12 @@ export default {
   props: {
     firstName: { type: String, default: () => '?' },
     lastName: { type: String, default: () => '?' },
-    lastCalled: { type: Number, default: () => null }
+    lastCalled: { type: Number, default: () => null },
+    currentDate: { type: Date, required: true }
   },
   computed: {
     formattedDaysAgo () {
-      return formatDistanceStrict(new Date(this.lastCalled * 1000), new Date(), { unit: 'day' }) + ' ago'
+      return formatDistanceStrict(new Date(this.lastCalled * 1000), this.currentDate, { unit: 'day' }) + ' ago'
     }
   }
 }
