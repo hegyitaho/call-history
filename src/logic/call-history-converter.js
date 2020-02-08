@@ -1,5 +1,7 @@
 import callHistory from '../callHistory'
-import { pick, uniq, pipe, map, max, reduce, prop, dissoc, whereEq, descend, sort } from 'ramda'
+import { pick, uniq, pipe, map, max, reduce, prop, dissoc, whereEq, descend, sortWith, ascend } from 'ramda'
+
+export const transformedCallHistory = convert(callHistory)
 
 export function convert (callHistory) {
   return pipe(
@@ -15,15 +17,13 @@ export function convert (callHistory) {
     })),
     map(callEntry => ({
       ...callEntry,
-      timesCalled: callEntry.everyCallForPerson.length,
+      callCount: callEntry.everyCallForPerson.length,
       lastCalled: pipe(
         map(prop('called')),
         reduce(max, 0)
       )(callEntry.everyCallForPerson)
     })),
-    sort(descend(prop('lastCalled'))),
+    sortWith([descend(prop('callCount')), descend(prop('lastCalled'))]),
     map(dissoc('everyCallForPerson'))
   )(callHistory)
 }
-
-export const transformedCallHistory = convert(callHistory)
