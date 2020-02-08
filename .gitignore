@@ -6,3 +6,4 @@ package-lock.json
 .DS_Store
 
 public/bundle\.js
+.history/

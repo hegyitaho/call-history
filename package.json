@@ -5,6 +5,7 @@
   "scripts": {
     "start": "npm-run-all build serve",
     "serve": "serve public -l 8888",
+    "dev": "webpack-dev-server",
     "build": "webpack"
   },
   "devDependencies": {
@@ -13,7 +14,9 @@
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.2",
     "webpack": "^4.17.2",
-    "webpack-command": "^0.4.1"
+    "webpack-cli": "^3.3.10",
+    "webpack-command": "^0.4.1",
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
