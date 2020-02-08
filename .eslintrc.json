@@ -4,19 +4,22 @@
         "es6": true
     },
     "extends": [
-        "plugin:vue/essential",
+        "plugin:vue/recommended",
         "standard"
     ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    "parser": "vue-eslint-parser",
     "parserOptions": {
         "ecmaVersion": 2018,
+        "parser": "babel-eslint",
         "sourceType": "module"
     },
     "plugins": [
-        "vue"
+        "vue",
+        "html"
     ],
     "rules": {
     }

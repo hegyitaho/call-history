@@ -1,17 +1,24 @@
 <template>
   <div>
-    <Header></Header>
-    <div v-for="contact in contacts" :key="contact.phoneNumber + contact.called">
-      {{ contact }}
+    <Header />
+    <div class="contact-box">
+      <Contact
+        v-for="contact in contacts"
+        :key="contact.phoneNumber + contact.called"
+        :first-name="contact.firstName"
+        :last-name="contact.lastName"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import Header from './header.vue'
+import Header from './components/header.vue'
+import Contact from './components/contact.vue'
 import contacts from './callHistory'
+
 export default {
-  components: { Header },
+  components: { Header, Contact },
   data () {
     return {
       contacts
@@ -21,14 +28,17 @@ export default {
 </script>
 
 <style>
-@import '../node_modules/reset-css/reset.css';
+/* @import '../node_modules/reset-css/reset.css'; */
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 </style>
 
-<style scoped>
-  .example {
-    color: black;
-  }
+<style lang="scss">
+.contact-box {
+  margin-top: 3em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
 </style>
