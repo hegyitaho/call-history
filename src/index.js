@@ -1,3 +1,10 @@
-import callHistory from './callHistory.json'
+import Vue from 'vue'
+import App from './app.vue'
 
-document.getElementById('content').innerText = JSON.stringify(callHistory)
+// eslint-disable-next-line no-new
+new Vue({
+  el: '#root',
+  render: h => h(App)
+})
+
+// document.getElementById('content').innerText = JSON.stringify(callHistory)
