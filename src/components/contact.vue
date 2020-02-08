@@ -3,17 +3,16 @@
     <div>
       {{ firstName }} <b>{{ lastName }}</b>
     </div>
-    <div class="is-flex is-centered">
+    <TextWithArrow>
       {{ formattedDaysAgo }}
-      <div class="is-flex has-padding-left">
-        <div class="arrow-right" />
-      </div>
-    </div>
+    </TextWithArrow>
   </div>
 </template>
 
 <script>
+import TextWithArrow from './text-with-arrow.vue'
 export default {
+  components: { TextWithArrow },
   props: {
     firstName: { type: String, default: () => '?' },
     lastName: { type: String, default: () => '?' },
@@ -21,8 +20,10 @@ export default {
   },
   computed: {
     formattedDaysAgo () {
-      const formattedDays = this.daysAgo === null ? '?' : this.formatDaysPluralOrSingular
-      return `${formattedDays} ago`
+      return `${this.formattedDays} ago`
+    },
+    formattedDays () {
+      return this.daysAgo === null ? '?' : this.formatDaysPluralOrSingular
     },
     formatDaysPluralOrSingular () {
       const days = this.daysAgo > 1 ? 'days' : 'day'
@@ -33,38 +34,22 @@ export default {
 </script>
 
 <style lang="scss">
-$icon-size: 0.5em;
+$row-height: 3em;
 $border-width: 1px;
+$horizontal-padding: 1em;
 .contact {
-  line-height: 3em;
-  box-sizing: content-box;
-  height: 3em;
+  line-height: $row-height;
+  height: $row-height;
   border: $border-width solid grey;
   border-top-width: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: $horizontal-padding;
+  padding-right: $horizontal-padding;
   &:first-child {
     border-top-width: $border-width;
   }
-}
-.is-flex {
-  display: flex;
-}
-.is-centered {
-  align-items: center;
-}
-.has-padding-left {
-  padding-left: 1em;
-}
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-top: $icon-size solid transparent;
-  border-bottom: $icon-size solid transparent;
-  border-left: $icon-size solid black;
 }
 
 </style>
