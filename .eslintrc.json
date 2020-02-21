@@ -23,5 +23,7 @@
         "html"
     ],
     "rules": {
+        "vue/require-default-prop": "off",
+        "vue/multiline-html-element-content-newline": "off"
     }
 }

@@ -3,10 +3,9 @@
     <div>
       {{ firstName }} <b>{{ lastName }}</b>
     </div>
-    <TextWithArrow>
-      {{ formattedDaysAgo }}
-    </TextWithArrow>
-  </div>
+    <TextWithArrow>{{
+      formattedDaysAgo
+    }}</TextWithArrow>
 </template>
 
 <script>

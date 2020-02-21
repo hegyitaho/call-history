@@ -9,14 +9,14 @@ test('renders a div', async () => {
       .map(wrapper => wrapper.text())
   )
     .toEqual([
-      expect.stringMatching(/Christina Brown\s+539 days ago/),
-      expect.stringMatching(/William Clubb\s+543 days ago/),
-      expect.stringMatching(/John Smith\s+545 days ago/),
-      expect.stringMatching(/Jane Bolster\s+522 days ago/),
-      expect.stringMatching(/Maureen Wallace\s+541 days ago/),
-      expect.stringMatching(/Sonja Aston\s+538 days ago/),
-      expect.stringMatching(/David Glass\s+540 days ago/),
-      expect.stringMatching(/Alexis Johnson\s+544 days ago/)
+      expect.stringMatching(/Christina Brown 539 days ago/),
+      expect.stringMatching(/William Clubb 543 days ago/),
+      expect.stringMatching(/John Smith 545 days ago/),
+      expect.stringMatching(/Jane Bolster 522 days ago/),
+      expect.stringMatching(/Maureen Wallace 541 days ago/),
+      expect.stringMatching(/Sonja Aston 538 days ago/),
+      expect.stringMatching(/David Glass 540 days ago/),
+      expect.stringMatching(/Alexis Johnson 544 days ago/)
     ])
 })
 
