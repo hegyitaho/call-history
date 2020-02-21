@@ -30,9 +30,9 @@ export default {
 </script>
 
 <style lang="scss">
-$row-height: 3em;
+$row-height: 3rem;
 $border-width: 1px;
-$horizontal-padding: 1em;
+$horizontal-padding: 1rem;
 .contact {
   line-height: $row-height;
   height: $row-height;

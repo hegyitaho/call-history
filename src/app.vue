@@ -44,9 +44,9 @@ body {
 </style>
 
 <style lang="scss">
-.contact-box {
-  margin-top: 3em;
-  margin-left: 2em;
-  margin-right: 2em;
-}
+  .contact-box {
+    margin-top: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 </style>
