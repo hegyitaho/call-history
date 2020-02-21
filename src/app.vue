@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="contact-box">
+    <ol class="contact-box">
       <Contact
         v-for="contact in callHistory"
         :key="contact.firstName + contact.lastName"
@@ -10,7 +10,7 @@
         :last-called="contact.lastCalled"
         :current-date="currentDate"
       />
-    </div>
+    </ol>
   </div>
 </template>
 

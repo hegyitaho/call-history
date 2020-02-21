@@ -1,11 +1,12 @@
 <template>
-  <div class="contact">
+  <li class="contact">
     <div>
       {{ firstName }} <b>{{ lastName }}</b>
     </div>
     <TextWithArrow>{{
       formattedDaysAgo
     }}</TextWithArrow>
+  </li>
 </template>
 
 <script>
