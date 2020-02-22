@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $row-height: 3rem;
 $border-width: 1px;
 $horizontal-padding: 1rem;
@@ -47,5 +47,4 @@ $horizontal-padding: 1rem;
     border-top-width: $border-width;
   }
 }
-
 </style>

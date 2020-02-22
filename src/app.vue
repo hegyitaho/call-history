@@ -38,13 +38,13 @@ export default {
 
 <style>
 body {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 </style>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .contact-box {
+    padding-inline-start: 0;
     margin-top: 3rem;
     margin-left: 2rem;
     margin-right: 2rem;

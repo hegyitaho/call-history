@@ -11,7 +11,7 @@
 export default {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $icon-size: 0.5em;
 .is-flex {
   display: flex;
